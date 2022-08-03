@@ -1,7 +1,7 @@
 # Pixela_control_panel_app_Python
 GUI created in Python using the Tkinter and Requests module to interact with Pixela habit tracking API
 
-This is a python GUI I created to help interacted with the Pixela API. Pixela is an online service that lets you record and track your habits with a Github like graph that illustrates the intensity of the habit you are tracking with increasingly opaque pixels over a timescale. 
+This is a python GUI created to help users interact with the Pixela API. Pixela is an online service that lets you record and track your habits and daily activities with a Github-like graph. The graph illustrates the intensity of the habit you are tracking with increasingly opaque pixels over a timescale.
 
 See Pixela API's website for more details at https://pixe.la
 
@@ -12,7 +12,24 @@ Example of Pixela Graph
 ***
 
 
-The "Pixela Control Panel App" consists of five different frames where the selection of each frame is determined by a series of radio buttons at the bottom of the app window in the "Options" titled label frame as can be seen in Figure 1 though Figure 5. The five user selected label frames titled "View Graph", "Create User Frame", "Create New Graph", "Delete Graph" and "Add pixel to Graph" are display in the middle of the app window. Furthermore the "Update Status" label frame overlaps applicable frames indicating if API transactions are successful. Referencing Figure 2, the "Create User" label frame lets the user registering a new username online with Pixela in addition to saving user data locally. Referencing Figure 3, the "Create New Graph" label frame lets the user register a new graph online with Pixela in addition to saving graph data locally. The user is required to select a username to associate the new graph, a unit on which to track the habit, whether the unit is a float or integer type, a graph name, and a graph ID. Referencing Figure 5, the "Add a Pixel to Graph" label frame lets the user register a value to track with a registered Pixela graph. Each value has a time stamp corresponding to the current day where one new graph value entry can be made per day. Referencing Figure 1, the "View Graph" frame lets the user inspect their past and current Pixela graph by opening a URL link directly to their pixel graph hosted on Pixila's website (See Figure 6). Referencing Figure 4, the "Delete Graph" frame allows users to both locally and online with Pixela delete graphs.
+The "Pixela Control Panel App" is consisted of five different frames. The selection of each frame is determined by a series of radio buttons at the bottom of the window entitled "Options”. Refer to Figures 1 though 5. 
+
+The five label frames users can choose from are called "View Graph", "Create User Frame", "Create New Graph", "Delete Graph”, and "Add pixel to Graph”, which are displayed in the middle of the app window. 
+
+There is an additional label frame called "Update Status”, which overlaps applicable frames when API transactions are successful. 
+
+The "View Graph" frame, as seen in Figure 1, lets the user inspect their past and current Pixela graph by opening a URL link directly to their pixel graph hosted on Pixila's website (Refer to Figure 6). 
+
+The "Create User" label frame allows the user to register a new user name with Pixela, and saves user data locally. Refer to Figure 2 for this label frame.
+
+The "Create New Graph" label frame lets the user register a new graph online with Pixela, and saves graph data locally. The user is required to select a user name for the new graph, to assign a unit measurement to track the habit, to choose between a float or integer type for the unit type, and to select a graph name and a graph ID. Refer to Figure 4 for this label frame.
+
+The "Delete Graph" frame allows users to delete data both locally and online with Pixela delete graphs. Refer to Figure 4 for this label frame. 
+
+The "Add a Pixel to Graph" label frame lets the user register a value to track with a registered Pixela graph. Each value has a time stamp corresponding to the current day, where one new graph value entry can be made per day. Refer to Figure 5 for this label frame.
+
+For more details on the Pixela API, visit their website at https://pixe.la
+
 
 
 ***
