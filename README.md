@@ -4,7 +4,6 @@ GUI created in Python using the Tkinter and Requests module to interact with Pix
 This is a python GUI I created to help interacted with the Pixela API. Pixela is an online service that lets you record and track your habits with a Github like graph that illustrates the intensity of the habit you are tracking with increasingly opaque pixels over a timescale. 
 
 ![image](https://user-images.githubusercontent.com/76194492/182506147-b5c1c3f7-54ba-44fd-b748-8a53b9bca80d.png)
-
 Example of Pixela Graph
 
 See Pixela API's website for more details at https://pixe.la
