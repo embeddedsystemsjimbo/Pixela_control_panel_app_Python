@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 from save_load import SaveAndLoad
 import tkinter.font as tkFont
 from pixela import Pixela
@@ -66,15 +67,22 @@ class ViewGraph(LabelFrame):
         corresponding URL in a separate window
         """
 
-        # get username and graph from drop menu
-        user_name, user_graph = self.option_variable.get().split()
+        try:
+            # get username and graph from drop menu
+            user_name, user_graph = self.option_variable.get().split()
 
-        # if username exist in pixel object list open window with associated url
-        for item in self.pixela_list:
-            if user_name == item.username and user_graph in item.graph_id:
-                # open url in window
-                webview.create_window("Pixela Graph", f"https://pixe.la/v1/users/{user_name}/graphs/{user_graph}.html")
-                webview.start()
+        except ValueError:
+
+            messagebox.showerror(title="ERROR", message="Incorrect Field Entry, Try Again")
+
+        else:
+
+            # if username exist in pixel object list open window with associated url
+            for item in self.pixela_list:
+                if user_name == item.username and user_graph in item.graph_id:
+                    # open url in window
+                    webview.create_window("Pixela Graph", f"https://pixe.la/v1/users/{user_name}/graphs/{user_graph}.html")
+                    webview.start()
 
     def select_user(self):
 
@@ -305,24 +313,32 @@ class ModifyGraph(LabelFrame):
         "user and graph" variable with Pixela API
         """
 
-        # get username and graph from drop menu
-        user_name, user_graph = self.option_variable.get().split()
+        try:
 
-        # if username and graph exist in pixela object list continue
-        for index, item in enumerate(self.pixela_list):
-            if user_name == item.username and user_graph in item.graph_id:
+            # get username and graph from drop menu
+            user_name, user_graph = self.option_variable.get().split()
 
-                # get current pixela object associated username
-                pixela_obj = self.pixela_list[index]
+        except ValueError:
 
-                # register pixel with associated username and graph with pixela API
-                response_message = pixela_obj.create_pixel(self.add_value_entry.get(), user_graph)
+            messagebox.showerror(title="ERROR", message="Incorrect Field Entry, Try Again")
 
-                # display response from Pixela API
-                self.warning_message.update_warning_message(response_message)
+        else:
 
-                # after 2 seconds refresh frame
-                self.after(2000, lambda: self.controller.switch_frame(ModifyGraph))
+            # if username and graph exist in pixela object list continue
+            for index, item in enumerate(self.pixela_list):
+                if user_name == item.username and user_graph in item.graph_id:
+
+                    # get current pixela object associated username
+                    pixela_obj = self.pixela_list[index]
+
+                    # register pixel with associated username and graph with pixela API
+                    response_message = pixela_obj.create_pixel(self.add_value_entry.get(), user_graph)
+
+                    # display response from Pixela API
+                    self.warning_message.update_warning_message(response_message)
+
+                    # after 2 seconds refresh frame
+                    self.after(2000, lambda: self.controller.switch_frame(ModifyGraph))
 
 
 class NewGraph(LabelFrame):
@@ -584,30 +600,38 @@ class DeleteGraph(LabelFrame):
         Delete graph associated with username registered with Pixela API
         """
 
-        # get username and graph from input fields
-        user_name, user_graph = self.option_variable.get().split()
+        try:
 
-        # if username exist in pixela object list continue
-        for index, item in enumerate(self.pixela_list):
-            if user_name == item.username and user_graph in item.graph_id:
+            # get username and graph from input fields
+            user_name, user_graph = self.option_variable.get().split()
 
-                # get pixela object for current username
-                pixela_obj = self.pixela_list[index]
+        except ValueError:
 
-                # delete graph corresponding to username and graph selection with Pixela API
-                response_message = pixela_obj.delete_graph(user_graph)
+            messagebox.showerror(title="ERROR", message="Incorrect Field Entry, Try Again")
 
-                # continue only if registration with Pixela API successful
-                if self.warning_message.update_warning_message(response_message):
+        else:
 
-                    # update pixela current pixel object by deleting selected graph data
-                    pixela_obj.delete_graph_id(user_graph)
+            # if username exist in pixela object list continue
+            for index, item in enumerate(self.pixela_list):
+                if user_name == item.username and user_graph in item.graph_id:
 
-                    # save locally
-                    SaveAndLoad.save(username=user_name, graph_list=pixela_obj.get_graph_id_list())
+                    # get pixela object for current username
+                    pixela_obj = self.pixela_list[index]
 
-                    # after 2 seconds refresh frame
-                    self.after(2000, lambda: self.controller.switch_frame(DeleteGraph))
+                    # delete graph corresponding to username and graph selection with Pixela API
+                    response_message = pixela_obj.delete_graph(user_graph)
+
+                    # continue only if registration with Pixela API successful
+                    if self.warning_message.update_warning_message(response_message):
+
+                        # update pixela current pixel object by deleting selected graph data
+                        pixela_obj.delete_graph_id(user_graph)
+
+                        # save locally
+                        SaveAndLoad.save(username=user_name, graph_list=pixela_obj.get_graph_id_list())
+
+                        # after 2 seconds refresh frame
+                        self.after(2000, lambda: self.controller.switch_frame(DeleteGraph))
 
 
 class DropMenu(Frame):
