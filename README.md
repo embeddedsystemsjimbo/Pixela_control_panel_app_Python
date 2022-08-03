@@ -3,12 +3,14 @@ GUI created in Python using the Tkinter and Requests module to interact with Pix
 
 This is a python GUI I created to help interacted with the Pixela API. Pixela is an online service that lets you record and track your habits with a Github like graph that illustrates the intensity of the habit you are tracking with increasingly opaque pixels over a timescale. 
 
+See Pixela API's website for more details at https://pixe.la
 
 ![image](https://user-images.githubusercontent.com/76194492/182506147-b5c1c3f7-54ba-44fd-b748-8a53b9bca80d.png)
 
 Example of Pixela Graph
+
 ***
-See Pixela API's website for more details at https://pixe.la
+
 
 The "Pixela Control Panel App" consists of five different frames where the selection of each frame is determined by a series of radio buttons at the bottom of the app window in the "Options" titled label frame as can be seen in Figure 1 though Figure 5. The five user selected label frames titled "View Graph", "Create User Frame", "Create New Graph", "Delete Graph" and "Add pixel to Graph" are display in the middle of the app window. Furthermore the "Update Status" label frame overlaps applicable frames indicating if API transactions are successful. Referencing Figure 2, the "Create User" label frame lets the user registering a new username online with Pixela in addition to saving user data locally. Referencing Figure 3, the "Create New Graph" label frame lets the user register a new graph online with Pixela in addition to saving graph data locally. The user is required to select a username to associate the new graph, a unit on which to track the habit, whether the unit is a float or integer type, a graph name, and a graph ID. Referencing Figure 5, the "Add a Pixel to Graph" label frame lets the user register a value to track with a registered Pixela graph. Each value has a time stamp corresponding to the current day where one new graph value entry can be made per day. Referencing Figure 1, the "View Graph" frame lets the user inspect their past and current Pixela graph by opening a URL link directly to their pixel graph hosted on Pixila's website (See Figure 6). Referencing Figure 4, the "Delete Graph" frame allows users to both locally and online with Pixela delete graphs.
 
