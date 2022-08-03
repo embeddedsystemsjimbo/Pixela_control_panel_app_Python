@@ -1,6 +1,8 @@
 # Pixela_control_panel_app_Python
 GUI created in Python using the Tkinter and Requests module to interact with Pixela habit tracking API
 
+***
+
 To run app, execute "Python3 main.py" from terminal.
 
 ***
