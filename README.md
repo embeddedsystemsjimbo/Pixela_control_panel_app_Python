@@ -47,4 +47,4 @@ Figure 5: Add Pixel to Graph Frame.
 
 <img width="923" alt="image" src="https://user-images.githubusercontent.com/76194492/182505453-44703a75-4436-4d37-92c6-92e31e7e05c8.png">
 
-Figure 6: Opened Pixela Graph example. 
+Figure 6: Pixela Graph example. 
