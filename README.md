@@ -1,6 +1,10 @@
 # Pixela_control_panel_app_Python
 GUI created in Python using the Tkinter and Requests module to interact with Pixela habit tracking API
 
+To run app, execute "Python3 main.py" from terminal.
+
+***
+
 This is a python GUI created to help users interact with the Pixela API. Pixela is an online service that lets you record and track your habits and daily activities with a Github-like graph. The graph illustrates the intensity of the habit you are tracking with increasingly opaque pixels over a timescale.
 
 See Pixela API's website for more details at https://pixe.la
