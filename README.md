@@ -35,7 +35,9 @@ The "Add a Pixel to Graph" label frame lets the user register a value to track w
 
 For more details on the Pixela API, visit their website at https://pixe.la
 
+See demo video below:
 
+https://www.youtube.com/watch?v=4Gw8I40R5cY
 
 ***
 
