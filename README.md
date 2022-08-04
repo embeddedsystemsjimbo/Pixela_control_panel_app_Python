@@ -7,7 +7,7 @@ To run app, execute "Python3 main.py" from terminal.
 
 ***
 
-This is a python GUI created to help users interact with the Pixela API. Pixela is an online service that lets you record and track your habits and daily activities with a Github-like graph. The graph illustrates the intensity of the habit you are tracking with increasingly opaque pixels over a timescale.
+This is a python GUI created to help users interact with the Pixela API. Pixela is an online service that lets you track your habits with with a Github-like graph. The graph illustrates the intensity of the habit you are tracking with increasingly opaque pixels over a timescale.
 
 
 ![image](https://user-images.githubusercontent.com/76194492/182506147-b5c1c3f7-54ba-44fd-b748-8a53b9bca80d.png)
